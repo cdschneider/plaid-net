@@ -1,21 +1,12 @@
+using Plaid.Net.Accounts;
+using Plaid.Net.Transactions;
+
 namespace Plaid.Net
 {
     public interface IPlaidClient
     {
-        IAssets Assets { get; }
-        
-        IBalance Balance { get; }
-        
-        IIdentity Identity { get; }
-        
-        IIncome Income { get; }
-        
-        IInstitutions Institutions { get;  }
-        
-        IInvestments Investments { get; }
-        
-        ILiabilities Liabilities { get; }
-        
+        IAccounts Accounts { get; }
+
         ITransactions Transactions { get; }
     }
 }

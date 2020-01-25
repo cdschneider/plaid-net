@@ -1,7 +1,6 @@
 using System;
-using Plaid.Net.Transactions;
 
-namespace Plaid.Net
+namespace Plaid.Net.Transactions
 {
     public interface ITransactions
     {
