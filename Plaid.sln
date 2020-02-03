@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plaid.Net", "src\Plaid.Net\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plaid.Net.Tests", "tests\Plaid.Net.Tests\Plaid.Net.Tests.csproj", "{A408C185-60E2-4113-9F03-46FA5EBE8989}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plaid.Net.ITests", "tests\Plaid.Net.ITests\Plaid.Net.ITests.csproj", "{53F16FF8-AA79-4152-8488-B1A9EBEC32AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{A408C185-60E2-4113-9F03-46FA5EBE8989}.Release|x64.Build.0 = Release|Any CPU
 		{A408C185-60E2-4113-9F03-46FA5EBE8989}.Release|x86.ActiveCfg = Release|Any CPU
 		{A408C185-60E2-4113-9F03-46FA5EBE8989}.Release|x86.Build.0 = Release|Any CPU
+		{53F16FF8-AA79-4152-8488-B1A9EBEC32AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53F16FF8-AA79-4152-8488-B1A9EBEC32AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53F16FF8-AA79-4152-8488-B1A9EBEC32AF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{53F16FF8-AA79-4152-8488-B1A9EBEC32AF}.Debug|x64.Build.0 = Debug|Any CPU
+		{53F16FF8-AA79-4152-8488-B1A9EBEC32AF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{53F16FF8-AA79-4152-8488-B1A9EBEC32AF}.Debug|x86.Build.0 = Debug|Any CPU
+		{53F16FF8-AA79-4152-8488-B1A9EBEC32AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53F16FF8-AA79-4152-8488-B1A9EBEC32AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53F16FF8-AA79-4152-8488-B1A9EBEC32AF}.Release|x64.ActiveCfg = Release|Any CPU
+		{53F16FF8-AA79-4152-8488-B1A9EBEC32AF}.Release|x64.Build.0 = Release|Any CPU
+		{53F16FF8-AA79-4152-8488-B1A9EBEC32AF}.Release|x86.ActiveCfg = Release|Any CPU
+		{53F16FF8-AA79-4152-8488-B1A9EBEC32AF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
