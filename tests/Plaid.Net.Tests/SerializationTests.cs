@@ -20,7 +20,7 @@ namespace Plaid.Net.Tests
                 }, options);
                 
                 Assert.Equal(
-                    "{\"institution_id\": \"ins_1234\", \"public_key\": \"pub-key-01234\", \"initial_products\": [\"1234\", \"5678\"]}", 
+                    "{\"institution_id\":\"ins_1234\",\"public_key\":\"pub-key-01234\",\"initial_products\":[\"1234\",\"5678\"]}", 
                     serialized);
             }
         }
