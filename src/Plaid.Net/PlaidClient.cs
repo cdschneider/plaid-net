@@ -2,11 +2,13 @@ namespace Plaid.Net
 {
     public class PlaidClient : IPlaidClient
     {
-        public PlaidClient(BasePlaidClient client)
-        {
-            
-        }
+        internal PlaidClient() {}
         
         public ISandbox Sandbox { get; }
+
+        public static PlaidClientBuilder Builder()
+        {
+            return new PlaidClientBuilder();
+        }
     }
 }

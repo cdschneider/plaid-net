@@ -2,10 +2,10 @@ namespace Plaid.Net
 {
     public class SandboxTokenCreateOptions
     {
-        public string Webhook;
+        public string Webhook { get; set; }
 
-        public string OverrideUser;
+        public string OverrideUser { get; set; }
         
-        public string OverridePassword;
+        public string OverridePassword { get; set; }
     }
 }

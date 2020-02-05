@@ -2,7 +2,7 @@ using System.Text.Json;
 
 namespace Plaid.Net.Serialization
 {
-    public class JsonSnakeCaseNamingPolicy : JsonNamingPolicy
+    public sealed class JsonSnakeCaseNamingPolicy : JsonNamingPolicy
     {
         public override string ConvertName(string name)
         {

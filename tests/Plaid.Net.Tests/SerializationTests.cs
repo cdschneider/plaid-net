@@ -11,7 +11,7 @@ namespace Plaid.Net.Tests
             [Fact]
             public void Serialize_SandboxTokenCreateRequest()
             {
-                var options = new JsonSerializerOptions { PropertyNamingPolicy = (JsonNamingPolicy) new JsonSnakeCaseNamingPolicy() };
+                var options = new JsonSerializerOptions { PropertyNamingPolicy = (JsonNamingPolicy) new JsonSnakeCaseNamingPolicy(), IgnoreNullValues = true, };
                 var serialized = JsonSerializer.Serialize(new SandboxTokenCreateRequest
                 {
                     InstitutionId = "ins_1234",
@@ -21,6 +21,22 @@ namespace Plaid.Net.Tests
                 
                 Assert.Equal(
                     "{\"institution_id\":\"ins_1234\",\"public_key\":\"pub-key-01234\",\"initial_products\":[\"1234\",\"5678\"]}", 
+                    serialized);
+            }
+
+            [Fact]
+            public void Serialize_SandboxTokenCreateOptions()
+            {
+                var options = new JsonSerializerOptions { PropertyNamingPolicy = (JsonNamingPolicy) new JsonSnakeCaseNamingPolicy(), IgnoreNullValues = true, };
+                var serialized = JsonSerializer.Serialize(new SandboxTokenCreateOptions
+                {
+                    Webhook = "https://www.genericwebhookurl.com/webhook",
+                    OverrideUser = "test_user",
+                    OverridePassword = "test_password"
+                }, options);
+                
+                Assert.Equal(
+                    "{\"webhook\":\"https://www.genericwebhookurl.com/webhook\",\"override_user\":\"test_user\",\"override_password\":\"test_password\"}", 
                     serialized);
             }
         }
