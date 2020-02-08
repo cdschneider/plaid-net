@@ -1,14 +1,16 @@
+using System.Net.Http;
+
 namespace Plaid.Net
 {
-    public class PlaidClient : IPlaidClient
+    public sealed class PlaidClient : IPlaidClient
     {
-        internal PlaidClient() {}
+        public PlaidClient(IHttpClientFactory httpClientFactory)
+        {
+            var httpClient = httpClientFactory.CreateClient("plaid");
+            
+            Sandbox = new Sandbox(httpClient);
+        }
         
         public ISandbox Sandbox { get; }
-
-        public static PlaidClientBuilder Builder()
-        {
-            return new PlaidClientBuilder();
-        }
     }
 }

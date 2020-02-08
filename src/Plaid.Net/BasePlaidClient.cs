@@ -1,4 +1,5 @@
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text.Json;
 using Plaid.Net.Serialization;
 
@@ -11,9 +12,7 @@ namespace Plaid.Net
 
         public BasePlaidClient(HttpClient client)
         {
-            client.DefaultRequestHeaders.Add("Content-Type", "application/json");
-            client.DefaultRequestHeaders.Add("Accept", "application/json");
-            client.DefaultRequestHeaders.Add("User-Agent", "Plaid .NET Client");
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             HttpClient = client;
             SerializerOptions = new JsonSerializerOptions

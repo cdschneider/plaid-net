@@ -3,17 +3,25 @@ using Xunit;
 
 namespace Plaid.Net.ITests
 {
-    public class SandboxITests
+    public class SandboxITests : BaseITest
     {
+        public SandboxITests(ITestFixture iTestFixture) : base(iTestFixture)
+        {
+        }
+        
         [Fact]
         public async Task CreateToken()
         {
-            var client = PlaidClient.Builder()
-                .ApiEnvironment(PlaidApiEnvironment.Sandbox)
-                .Build();
+            var resp = await Client().Sandbox.TokenCreateAsync(new SandboxTokenCreateRequest
+            {
+                PublicKey = "ef380348545981f59c57944ccd40b4",
+                InstitutionId = "ins_3",
+                InitialProducts = new [] { "auth" }
+            });
             
-            var request = new SandboxTokenCreateRequest();
-            var response = await client.Sandbox.TokenCreateAsync(request);
+            Assert.NotNull(resp);
+            Assert.NotNull(resp.PublicToken);
+            Assert.NotNull(resp.RequestId);
         }
     }
 }

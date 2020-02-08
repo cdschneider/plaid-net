@@ -1,4 +1,5 @@
 using System.Net.Http;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -18,7 +19,7 @@ namespace Plaid.Net
         public async Task<SandboxTokenCreateResponse> TokenCreateAsync(SandboxTokenCreateRequest request)
         {
             var data = JsonSerializer.Serialize(request, SerializerOptions);
-            var content = new StringContent(data);
+            var content = new StringContent(data, Encoding.UTF8, "application/json");
 
             var httpResponse = await HttpClient.PostAsync("/sandbox/public_token/create", content);
             httpResponse.EnsureSuccessStatusCode();
@@ -35,7 +36,7 @@ namespace Plaid.Net
         public async Task<SandboxItemResetLoginResponse> ItemResetLoginAsync(SandboxItemResetLoginRequest request)
         {
             var data = JsonSerializer.Serialize(request, SerializerOptions);
-            var content = new StringContent(data);
+            var content = new StringContent(data, Encoding.UTF8, "application/json");
 
             var httpResponse = await HttpClient.PostAsync("/sandbox/item/reset_login", content);
             httpResponse.EnsureSuccessStatusCode();
