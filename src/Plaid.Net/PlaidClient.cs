@@ -1,4 +1,5 @@
 using System.Net.Http;
+using Plaid.Net.Sandbox;
 
 namespace Plaid.Net
 {
@@ -7,8 +8,7 @@ namespace Plaid.Net
         public PlaidClient(IHttpClientFactory httpClientFactory)
         {
             var httpClient = httpClientFactory.CreateClient("plaid");
-            
-            Sandbox = new Sandbox(httpClient);
+            Sandbox = new SandboxHttpClient(httpClient);
         }
         
         public ISandbox Sandbox { get; }

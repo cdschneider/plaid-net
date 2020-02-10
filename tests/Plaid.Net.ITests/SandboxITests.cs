@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using Plaid.Net.Sandbox;
 using Xunit;
 
 namespace Plaid.Net.ITests
@@ -15,7 +16,7 @@ namespace Plaid.Net.ITests
             var resp = await Client().Sandbox.TokenCreateAsync(new SandboxTokenCreateRequest
             {
                 PublicKey = "ef380348545981f59c57944ccd40b4",
-                InstitutionId = "ins_3",
+                InstitutionId = TestData.Institution1,
                 InitialProducts = new [] { "auth" }
             });
             

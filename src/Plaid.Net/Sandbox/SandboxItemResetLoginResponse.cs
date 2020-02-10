@@ -1,4 +1,4 @@
-namespace Plaid.Net
+namespace Plaid.Net.Sandbox
 {
     public class SandboxItemResetLoginResponse
     {

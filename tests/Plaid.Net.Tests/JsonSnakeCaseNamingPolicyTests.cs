@@ -1,7 +1,7 @@
 using Plaid.Net.Serialization;
 using Xunit;
 
-namespace Plaid.Net.Tests.Serialization
+namespace Plaid.Net.Tests
 {
     public class JsonSnakeCaseNamingPolicyTests
     {

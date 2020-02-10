@@ -3,7 +3,7 @@ using System.Net.Http.Headers;
 using System.Text.Json;
 using Plaid.Net.Serialization;
 
-namespace Plaid.Net
+namespace Plaid.Net.Core
 {
     public class BasePlaidClient
     {
@@ -17,7 +17,7 @@ namespace Plaid.Net
             HttpClient = client;
             SerializerOptions = new JsonSerializerOptions
             {
-                PropertyNamingPolicy = (JsonNamingPolicy) new JsonSnakeCaseNamingPolicy(), 
+                PropertyNamingPolicy = new JsonSnakeCaseNamingPolicy(), 
                 IgnoreNullValues = true
             };
         }

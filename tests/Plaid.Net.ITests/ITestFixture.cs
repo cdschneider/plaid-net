@@ -8,9 +8,9 @@ namespace Plaid.Net.ITests
     {
         public ITestFixture()
         {
-            var services = new ServiceCollection().AddLogging(opts => opts.SetMinimumLevel(LogLevel.Debug).AddConsole());
-            services.AddHttpClient("plaid", client => 
-                client.BaseAddress = new Uri("https://sandbox.plaid.com/"));
+            var services = new ServiceCollection();
+            services.AddLogging(opts => opts.SetMinimumLevel(LogLevel.Debug).AddConsole());
+            services.AddHttpClient("plaid",c => c.BaseAddress = new Uri("https://sandbox.plaid.com/"));
             
             ServiceProvider = services.BuildServiceProvider();
         }

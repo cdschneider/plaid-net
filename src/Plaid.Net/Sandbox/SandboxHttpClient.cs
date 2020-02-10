@@ -2,12 +2,13 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Plaid.Net.Core;
 
-namespace Plaid.Net
+namespace Plaid.Net.Sandbox
 {
-    public class Sandbox : BasePlaidClient, ISandbox
+    public class SandboxHttpClient : BasePlaidClient, ISandbox
     {
-        public Sandbox(HttpClient httpClient) : base(httpClient)
+        public SandboxHttpClient(HttpClient httpClient) : base(httpClient)
         {
         }
 
@@ -19,7 +20,7 @@ namespace Plaid.Net
         public async Task<SandboxTokenCreateResponse> TokenCreateAsync(SandboxTokenCreateRequest request)
         {
             var data = JsonSerializer.Serialize(request, SerializerOptions);
-            var content = new StringContent(data, Encoding.UTF8, "application/json");
+            var content = new StringContent(data, Encoding.UTF8,"application/json");
 
             var httpResponse = await HttpClient.PostAsync("/sandbox/public_token/create", content);
             httpResponse.EnsureSuccessStatusCode();
@@ -36,7 +37,7 @@ namespace Plaid.Net
         public async Task<SandboxItemResetLoginResponse> ItemResetLoginAsync(SandboxItemResetLoginRequest request)
         {
             var data = JsonSerializer.Serialize(request, SerializerOptions);
-            var content = new StringContent(data, Encoding.UTF8, "application/json");
+            var content = new StringContent(data, Encoding.UTF8,"application/json");
 
             var httpResponse = await HttpClient.PostAsync("/sandbox/item/reset_login", content);
             httpResponse.EnsureSuccessStatusCode();
@@ -53,7 +54,7 @@ namespace Plaid.Net
         public async Task<SandboxItemFireWebhookResponse> ItemFireWebhookAsync(SandboxItemFireWebhookRequest request)
         {
             var data = JsonSerializer.Serialize(request, SerializerOptions);
-            var content = new StringContent(data);
+            var content = new StringContent(data, Encoding.UTF8, "application/json");
 
             var httpResponse = await HttpClient.PostAsync("/sandbox/item/fire_webhook", content);
             httpResponse.EnsureSuccessStatusCode();

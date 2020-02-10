@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace Plaid.Net
+namespace Plaid.Net.Sandbox
 {
     public interface ISandbox
     {
