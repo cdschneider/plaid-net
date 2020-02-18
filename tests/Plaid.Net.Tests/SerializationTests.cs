@@ -32,12 +32,12 @@ namespace Plaid.Net.Tests
                 var serialized = JsonSerializer.Serialize(new SandboxTokenCreateOptions
                 {
                     Webhook = "https://www.genericwebhookurl.com/webhook",
-                    OverrideUser = "test_user",
+                    OverrideUsername = "test_user",
                     OverridePassword = "test_password"
                 }, options);
                 
                 Assert.Equal(
-                    "{\"webhook\":\"https://www.genericwebhookurl.com/webhook\",\"override_user\":\"test_user\",\"override_password\":\"test_password\"}", 
+                    "{\"webhook\":\"https://www.genericwebhookurl.com/webhook\",\"override_username\":\"test_user\",\"override_password\":\"test_password\"}", 
                     serialized);
             }
         }
