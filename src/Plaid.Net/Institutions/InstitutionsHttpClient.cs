@@ -20,7 +20,14 @@ namespace Plaid.Net.Institutions
 
         public async Task<InstitutionsGetResponse> GetAsync(InstitutionsGetRequest request)
         {
-            throw new System.NotImplementedException();
+            var data = JsonSerializer.Serialize(request, SerializerOptions);
+            var content = new StringContent(data, Encoding.UTF8,"application/json");
+
+            var httpResponse = await HttpClient.PostAsync("/institutions/get", content);
+            httpResponse.EnsureSuccessStatusCode();
+
+            var rawResponse = await httpResponse.Content.ReadAsStringAsync();
+            return JsonSerializer.Deserialize<InstitutionsGetResponse>(rawResponse, SerializerOptions);
         }
 
         public InstitutionsGetByIdResponse GetById(InstitutionsGetByIdRequest request)
@@ -30,7 +37,14 @@ namespace Plaid.Net.Institutions
 
         public async Task<InstitutionsGetByIdResponse> GetByIdAsync(InstitutionsGetByIdRequest request)
         {
-            throw new System.NotImplementedException();
+            var data = JsonSerializer.Serialize(request, SerializerOptions);
+            var content = new StringContent(data, Encoding.UTF8,"application/json");
+
+            var httpResponse = await HttpClient.PostAsync("/institutions/get_by_id", content);
+            httpResponse.EnsureSuccessStatusCode();
+
+            var rawResponse = await httpResponse.Content.ReadAsStringAsync();
+            return JsonSerializer.Deserialize<InstitutionsGetByIdResponse>(rawResponse, SerializerOptions);
         }
 
         public InstitutionsSearchResponse Search(InstitutionsSearchRequest request)
