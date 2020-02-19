@@ -4,16 +4,17 @@ using Xunit;
 
 namespace Plaid.Net.ITests
 {
-    public class SandboxITests : BaseITest
+    public class SandboxHttpClientTests : BaseITest
     {
-        public SandboxITests(ITestFixture iTestFixture) : base(iTestFixture)
+        public SandboxHttpClientTests(ITestFixture fixture) : base(fixture)
         {
         }
         
         [Fact]
         public async Task CreateToken()
         {
-            var resp = await Client().Sandbox.TokenCreateAsync(new SandboxTokenCreateRequest
+            var client = Client().Sandbox;
+            var resp = await client.TokenCreateAsync(new SandboxTokenCreateRequest
             {
                 PublicKey = "ef380348545981f59c57944ccd40b4",
                 InstitutionId = TestData.Institution1,

@@ -1,9 +1,9 @@
+using Plaid.Net.Core;
+
 namespace Plaid.Net.Sandbox
 {
-    public class SandboxItemResetLoginResponse
+    public class SandboxItemResetLoginResponse : BasePlaidResponse
     {
         public bool ResetLogin;
-
-        public string RequestId;
     }
 }

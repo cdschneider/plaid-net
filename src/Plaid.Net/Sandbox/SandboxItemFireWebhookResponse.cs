@@ -1,9 +1,9 @@
+using Plaid.Net.Core;
+
 namespace Plaid.Net.Sandbox
 {
-    public class SandboxItemFireWebhookResponse
+    public class SandboxItemFireWebhookResponse : BasePlaidResponse
     {
         public bool WebhookFired;
-
-        public string RequestId;
     }
 }
