@@ -8,7 +8,7 @@ namespace Plaid.Net.Transactions
         
         public string AccountId { get; set; }
         
-        public string Category { get; set; }
+        public string[] Category { get; set; }
         
         public string CategoryId { get; set; }
         

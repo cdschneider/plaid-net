@@ -15,11 +15,8 @@ namespace Plaid.Net.Core
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             HttpClient = client;
-            SerializerOptions = new JsonSerializerOptions
-            {
-                PropertyNamingPolicy = new JsonSnakeCaseNamingPolicy(), 
-                IgnoreNullValues = true
-            };
+            SerializerOptions = new JsonSerializerOptions { PropertyNamingPolicy = new JsonSnakeCaseNamingPolicy(), IgnoreNullValues = true };
+            SerializerOptions.Converters.Add(new PlaidDateTimeConverter());
         }
     }
 }

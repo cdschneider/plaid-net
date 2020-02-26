@@ -1,4 +1,5 @@
 using System.Net.Http;
+using Plaid.Net.Categories;
 using Plaid.Net.Institutions;
 using Plaid.Net.Sandbox;
 
@@ -12,10 +13,13 @@ namespace Plaid.Net
             
             Sandbox = new SandboxHttpClient(httpClient);
             Institutions = new InstitutionsHttpClient(httpClient);
+            Categories = new CategoriesHttpClient(httpClient);
         }
         
         public ISandbox Sandbox { get; }
         
         public IInstitutions Institutions { get; }
+        
+        public ICategories Categories { get; }
     }
 }
