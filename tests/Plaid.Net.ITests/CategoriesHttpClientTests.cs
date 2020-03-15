@@ -1,22 +1,18 @@
 using System.Threading.Tasks;
+using Plaid.Net.ITests.Core;
 using Xunit;
 
 namespace Plaid.Net.ITests
 {
     public class CategoriesHttpClientTests : BaseITest
     {
-        public CategoriesHttpClientTests(ITestFixture fixture) : base(fixture)
-        {
-        }
-
         [Fact]
-        public async Task Get()
+        public async Task GetAsync()
         {
-            var client = Client().Categories;
+            var client = Client.Categories;
             var actual = await client.GetAsync();
-            
-            Assert.NotNull(actual);
-            Assert.NotNull(actual.RequestId);
+
+            AssertResponse(actual);
             Assert.NotEmpty(actual.Categories);
         }
     }

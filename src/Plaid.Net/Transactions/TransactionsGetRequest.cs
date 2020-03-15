@@ -8,7 +8,7 @@ namespace Plaid.Net.Transactions
 
         public string Secret { get; set; }
 
-        public string AccessKey { get; set; }
+        public string AccessToken { get; set; }
 
         public DateTime StartDate { get; set; }
 

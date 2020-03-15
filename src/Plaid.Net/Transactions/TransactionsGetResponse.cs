@@ -1,8 +1,9 @@
 using System;
+using Plaid.Net.Core;
 
 namespace Plaid.Net.Transactions
 {
-    public class TransactionsGetResponse
+    public class TransactionsGetResponse : BasePlaidItemResponse
     {
         public string TransactionId { get; set; }
         

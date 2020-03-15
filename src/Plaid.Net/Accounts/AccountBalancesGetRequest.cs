@@ -1,13 +1,7 @@
 namespace Plaid.Net.Accounts
 {
-    public class AccountBalancesGetRequest
+    public class AccountBalancesGetRequest : AccountGetRequest
     {
-        public string ClientId { get; set; }
-
-        public string Secret { get; set; }
-
-        public string AccessKey { get; set; }
-        
         public AccountBalancesGetRequestOptions Options { get; set; }
     }
 

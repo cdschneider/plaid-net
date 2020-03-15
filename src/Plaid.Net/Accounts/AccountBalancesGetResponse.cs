@@ -1,9 +1,9 @@
+using Plaid.Net.Core;
+
 namespace Plaid.Net.Accounts
 {
-    public class AccountBalancesGetResponse
+    public class AccountBalancesGetResponse : BasePlaidItemResponse
     {
         public AccountResponse[] Accounts { get; set; }
-        
-        public object Item { get; set; }
     }
 }

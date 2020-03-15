@@ -4,7 +4,7 @@ namespace Plaid.Net.Accounts
     {
         public string AccountId { get; set; }
         
-        public object Balances { get; set; }
+        public AccountBalanceResponse Balances { get; set; }
         
         public string Name { get; set; }
         

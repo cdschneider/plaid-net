@@ -6,7 +6,7 @@ namespace Plaid.Net.Accounts
     {
         AccountGetResponse Get(AccountGetRequest request);
         Task<AccountGetResponse> GetAsync(AccountGetRequest request);
-        AccountBalancesGetResponse GetBalances(AccountBalancesGetRequest request);
-        Task<AccountBalancesGetResponse> GetBalancesAsync(AccountBalancesGetRequest request);
+        AccountBalancesGetResponse GetBalance(AccountBalancesGetRequest request);
+        Task<AccountBalancesGetResponse> GetBalanceAsync(AccountBalancesGetRequest request);
     }
 }
