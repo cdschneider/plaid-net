@@ -8,10 +8,10 @@ namespace Plaid.Net.ITests
     public class InstitutionsHttpClientTests : BaseITest
     {
         [Fact]
-        public async Task GetAsync()
+        public void Get()
         {
             var client = Client.Institutions;
-            var resp = await client.GetAsync(new InstitutionsGetRequest
+            var resp = client.Get(new InstitutionsGetRequest
             {
                 ClientId = ClientId,
                 Secret = Secret,
@@ -25,10 +25,10 @@ namespace Plaid.Net.ITests
         }
         
         [Fact]
-        public async Task GetByIdAsync()
+        public void GetById()
         {
             var client = Client.Institutions;
-            var resp = await client.GetByIdAsync(new InstitutionsGetByIdRequest
+            var resp = client.GetById(new InstitutionsGetByIdRequest
             {
                 PublicKey = PublicKey,
                 InstitutionId = "ins_4"
@@ -40,10 +40,10 @@ namespace Plaid.Net.ITests
         }
         
         [Fact]
-        public async Task SearchInstitutionsAsync()
+        public void SearchInstitutions()
         {
             var client = Client.Institutions;
-            var resp = await client.SearchAsync(new InstitutionsSearchRequest
+            var resp = client.Search(new InstitutionsSearchRequest
             {
                 PublicKey = PublicKey,
                 Products = new [] { "transactions" },

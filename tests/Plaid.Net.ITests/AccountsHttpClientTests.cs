@@ -11,10 +11,10 @@ namespace Plaid.Net.ITests
         protected override string Product => "transactions";
 
         [Fact]
-        public async Task GetAsync()
+        public void Get()
         {
             var client = Client.Accounts;
-            var actual = await client.GetAsync(new AccountGetRequest 
+            var actual = client.Get(new AccountGetRequest 
                 { AccessToken = AccessToken, ClientId = ClientId, Secret = Secret });
             
             AssertItem(actual);

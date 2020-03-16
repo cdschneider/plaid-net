@@ -8,10 +8,10 @@ namespace Plaid.Net.ITests
     public class SandboxHttpClientTests : BaseITest
     {   
         [Fact]
-        public async Task CreateToken()
+        public void CreateToken()
         {
             var client = Client.Sandbox;
-            var resp = await client.TokenCreateAsync(new SandboxTokenCreateRequest
+            var resp = client.TokenCreate(new SandboxTokenCreateRequest
             {
                 PublicKey = PublicKey,
                 InstitutionId = TestData.Institution1,

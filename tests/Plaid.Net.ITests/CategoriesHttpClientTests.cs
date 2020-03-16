@@ -7,10 +7,10 @@ namespace Plaid.Net.ITests
     public class CategoriesHttpClientTests : BaseITest
     {
         [Fact]
-        public async Task GetAsync()
+        public void Get()
         {
             var client = Client.Categories;
-            var actual = await client.GetAsync();
+            var actual = client.Get();
 
             AssertResponse(actual);
             Assert.NotEmpty(actual.Categories);
