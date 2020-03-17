@@ -17,4 +17,10 @@
     <ProjectReference Include="..\..\src\Plaid.Net\Plaid.Net.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="xunit.runner.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

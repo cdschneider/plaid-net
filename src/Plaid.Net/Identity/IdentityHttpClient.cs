@@ -4,29 +4,29 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Plaid.Net.Core;
 
-namespace Plaid.Net.Income
+namespace Plaid.Net.Identity
 {
-    public class IncomeHttpClient : BasePlaidClient, IIncome
+    public class IdentityHttpClient : BasePlaidClient, IIdentity
     {
-        public IncomeHttpClient(HttpClient client) : base(client)
+        public IdentityHttpClient(HttpClient client) : base(client)
         {
         }
 
-        public IncomeGetResponse Get(IncomeGetRequest request)
+        public IdentityGetResponse Get(IdentityGetRequest request)
         {
             return GetAsync(request).GetAwaiter().GetResult();
         }
 
-        public async Task<IncomeGetResponse> GetAsync(IncomeGetRequest request)
+        public async Task<IdentityGetResponse> GetAsync(IdentityGetRequest request)
         {
             var data = JsonSerializer.Serialize(request, SerializerOptions);
             var content = new StringContent(data, Encoding.UTF8,"application/json");
 
-            var httpResponse = await HttpClient.PostAsync("/income/get", content);
+            var httpResponse = await HttpClient.PostAsync("/identity/get", content);
             httpResponse.EnsureSuccessStatusCode();
 
             var rawResponse = await httpResponse.Content.ReadAsStringAsync();
-            return JsonSerializer.Deserialize<IncomeGetResponse>(rawResponse, SerializerOptions);
+            return JsonSerializer.Deserialize<IdentityGetResponse>(rawResponse, SerializerOptions);
         }
     }
 }

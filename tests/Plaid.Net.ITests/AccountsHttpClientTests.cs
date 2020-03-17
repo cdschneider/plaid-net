@@ -19,5 +19,19 @@ namespace Plaid.Net.ITests
             
             AssertItem(actual);
         }
+
+        [Fact]
+        public void GetBalance()
+        {
+            var client = Client.Accounts;
+            var actual = client.GetBalance(new AccountBalancesGetRequest
+            {
+                AccessToken = AccessToken,
+                ClientId = ClientId,
+                Secret = Secret
+            });
+            
+            AssertItem(actual);
+        }
     }
 }

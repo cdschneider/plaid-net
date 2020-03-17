@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Plaid.Net.ITests.Core;
 using Plaid.Net.Transactions;
@@ -18,10 +19,14 @@ namespace Plaid.Net.ITests
             {
                 AccessToken = AccessToken,
                 ClientId = ClientId,
-                Secret = Secret
+                Secret = Secret,
+                StartDate = DateTime.Now.Subtract(TimeSpan.FromDays(30)),
+                EndDate = DateTime.Now
             });
             
             AssertItem(resp);
+            Assert.True(resp.TotalTransactions > 0);
+            Assert.NotEmpty(resp.Transactions);
         }
     }
 }

@@ -1,6 +1,9 @@
 using System.Net.Http;
 using Plaid.Net.Accounts;
+using Plaid.Net.Auth;
 using Plaid.Net.Categories;
+using Plaid.Net.Identity;
+using Plaid.Net.Income;
 using Plaid.Net.Institutions;
 using Plaid.Net.Items;
 using Plaid.Net.Sandbox;
@@ -20,6 +23,9 @@ namespace Plaid.Net
             Accounts = new AccountsHttpClient(httpClient);
             Items = new ItemsHttpClient(httpClient);
             Transactions = new TransactionsHttpClient(httpClient);
+            Income = new IncomeHttpClient(httpClient);
+            Identity = new IdentityHttpClient(httpClient);
+            Auth = new AuthHttpClient(httpClient);
         }
         
         public ISandbox Sandbox { get; }
@@ -28,5 +34,8 @@ namespace Plaid.Net
         public IAccounts Accounts { get; set; }
         public IItems Items { get; set; }
         public ITransactions Transactions { get; }
+        public IIncome Income { get; }
+        public IIdentity Identity { get; }
+        public IAuth Auth { get; set; }
     }
 }
